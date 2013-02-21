@@ -1,4 +1,4 @@
-weixin2weibo
+weibo via weixin
 ============
 
 SAE上搭建，自动接收微信消息，并发送到指定微博。（适合搭建树洞这种东西）
