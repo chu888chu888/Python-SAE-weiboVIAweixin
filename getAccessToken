@@ -1,0 +1,26 @@
+#!/usr/bin/python
+#--coding:utf-8--
+
+from weibo import *
+import webbrowser
+import urllib
+
+#fill your development keys
+appkey=''
+appsecret=''
+callback_url=''
+
+client = APIClient(app_key=appkey,app_secret=appsecret,redirect_uri=callback_url) 
+getcode = client.get_authorize_url()
+webbrowser.open_new(getcode)
+#input the url showing on the webbrowser
+code = raw_input('input url:').split('code=')[-1]
+
+r = client.request_access_token(code)
+print 'access_token : ',r.access_token
+print 'expires_in : ',str(r.expires_in)
+
+
+
+
+
